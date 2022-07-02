@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 
 @RestController
@@ -16,7 +17,7 @@ class ProjectController @Autowired constructor(
 ) {
     @PostMapping("/project")
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody createProjectDto: CreateProjectDto): CreateProjectResponseDto {
+    fun create(@RequestBody @Valid createProjectDto: CreateProjectDto): CreateProjectResponseDto {
         return projectService.createProject(createProjectDto)
     }
 }
