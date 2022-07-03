@@ -2,7 +2,6 @@ package me.travisalexandersmith.redflag.global
 
 import me.travisalexandersmith.redflag.global.dto.ValidationErrorMessage
 import org.springframework.http.HttpStatus
-import org.springframework.stereotype.Component
 import org.springframework.validation.FieldError
 import org.springframework.validation.ObjectError
 import org.springframework.web.bind.MethodArgumentNotValidException
