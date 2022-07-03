@@ -17,7 +17,8 @@ class ProjectServiceTest {
 
     private lateinit var projectRepository: ProjectRepository
     private val projectName = "Test Project"
-    private val createProjectDto = CreateProjectDto(name = projectName)
+    private val projectDescription = "This is a sample project."
+    private val createProjectDto = CreateProjectDto(name = projectName, description = projectDescription)
     private lateinit var projectService: ProjectService
 
     @BeforeEach

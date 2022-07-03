@@ -17,11 +17,15 @@ class ProjectService @Autowired constructor(
         if (projectRepository.findByName(createProjectDto.name) != null) {
             throw DuplicateProjectException("project already exists with the name: ${createProjectDto.name}")
         } else {
-            val project = Project(id = null, name = createProjectDto.name)
+            val project = Project(id = null, name = createProjectDto.name, description = createProjectDto.description)
 
             val savedProject = projectRepository.save(project)
 
-            return CreateProjectResponseDto(id = savedProject.id as Long, name = savedProject.name as String)
+            return CreateProjectResponseDto(
+                id = savedProject.id as Long,
+                name = savedProject.name as String,
+                description = savedProject.description
+            )
         }
 
     }

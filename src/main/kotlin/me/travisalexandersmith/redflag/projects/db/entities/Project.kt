@@ -14,6 +14,8 @@ data class Project(
     val id: Long? = 0,
 
     @Column(nullable = false, unique = true)
-    val name: String? = ""
+    val name: String? = "",
+
+    val description: String? = ""
 )
 
